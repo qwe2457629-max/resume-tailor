@@ -22,7 +22,7 @@ That constraint is practical, not just principled. Large employers state in thei
 ## Install
 
 ```bash
-git clone https://github.com/YOUR-USERNAME/resume-tailor.git ~/.claude/skills/resume-tailor
+git clone https://github.com/qwe2457629-max/resume-tailor.git ~/.claude/skills/resume-tailor
 ```
 
 Then in Claude Code:
