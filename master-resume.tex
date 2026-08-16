@@ -1,0 +1,115 @@
+% Single-page resume template.
+% Compile with:  tectonic master-resume.tex
+%
+% Replace every ALL-CAPS placeholder. Keep it to one page: run
+%   python3 scripts/check_pages.py master-resume.pdf
+% and cut content before touching the spacing knobs marked SPACING below.
+
+\documentclass[10pt,letterpaper]{extarticle}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{mathptmx}
+\usepackage[margin=0.45in,top=0.35in,bottom=0.35in]{geometry} % SPACING: 0.4in / 0.3in buys ~2 lines
+\usepackage{enumitem}
+\usepackage{titlesec}
+\usepackage{hyperref}
+\usepackage{xcolor}
+\usepackage{array}
+\usepackage{tabularx}
+\usepackage{ragged2e}
+
+\hypersetup{colorlinks=true,urlcolor=black,linkcolor=black}
+\pagestyle{empty}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0pt}
+
+\titleformat{\section}{\normalsize\bfseries\uppercase}{}{0em}{}[\titlerule]
+\titlespacing*{\section}{0pt}{4pt}{2pt} % SPACING: {0pt}{3pt}{1pt} tightens sections
+\setlist[itemize]{leftmargin=*, topsep=0pt, itemsep=0pt, parsep=0pt, label=\textbullet}
+
+\newcommand{\resumeheader}[2]{%
+    \begin{center}{\LARGE \textbf{#1}} \\[1pt] {\small #2}\end{center}}
+
+\newcommand{\entry}[4]{%
+    \noindent
+    \begin{tabular*}{\textwidth}{@{}p{0.70\textwidth}@{\extracolsep{\fill}}r@{}}
+        \textbf{#1} & #2 \\
+        \textit{#3} & \textit{#4} \\
+    \end{tabular*}
+    \vspace{1pt} % SPACING: 0.5pt tightens entries
+}
+
+\newcommand{\coursework}[1]{%
+    {\small Coursework: #1}\\[2pt]
+}
+
+\begin{document}
+
+\resumeheader{YOUR NAME}{CITY, COUNTRY \textbullet{} \href{mailto:YOU@EXAMPLE.COM}{YOU@EXAMPLE.COM}}
+
+\section*{Summary}
+% Rewrite this for every application. Two to four sentences. Lead with whatever
+% the posting treats as non-negotiable, then one or two quantified proof points,
+% then what you are looking for.
+DEGREE AND STATUS with EXPERIENCE AREA across EMPLOYERS. At EMPLOYER, QUANTIFIED ACHIEVEMENT. Strengths in SKILL, SKILL, and SKILL.
+
+\section*{Education}
+
+\entry{UNIVERSITY}{CITY, COUNTRY}
+      {DEGREE, FIELD}{Expected MONTH YEAR}
+\coursework{COURSE, COURSE, COURSE, COURSE}
+
+\entry{UNIVERSITY}{CITY, COUNTRY}
+      {DEGREE, FIELD \quad | \quad GPA: X.XX/X.XX}{MONTH YEAR}
+\coursework{COURSE, COURSE, COURSE}
+
+\section*{Professional Experience}
+
+\entry{EMPLOYER}{LOCATION}
+      {JOB TITLE}{MONTH YEAR -- MONTH YEAR}
+\begin{itemize}
+    % Strongest, most quantified bullet first. Verb + what you did + measured result.
+    \item VERB SCOPE, \textbf{QUANTIFIED RESULT}.
+    \item VERB SCOPE, resulting in \textbf{QUANTIFIED RESULT}.
+    \item VERB SCOPE with STAKEHOLDERS, delivering OUTCOME.
+\end{itemize}
+
+\entry{EMPLOYER}{LOCATION}
+      {JOB TITLE}{MONTH YEAR -- MONTH YEAR}
+\begin{itemize}
+    \item VERB SCOPE, \textbf{QUANTIFIED RESULT}.
+    \item VERB SCOPE, delivering OUTCOME.
+\end{itemize}
+
+% A role you have accepted but not started yet:
+% \entry{EMPLOYER}{LOCATION}
+%       {JOB TITLE}{Incoming MONTH YEAR}
+% \begin{itemize}
+%     \item Selected to VERB SCOPE. (Describe scope, never accomplishments.)
+% \end{itemize}
+
+\section*{Leadership \& Programs}
+% Rename this heading to match the posting when it helps
+% (e.g. "Leadership \& Event Experience" for a partnerships role).
+
+\entry{ORGANIZATION}{LOCATION}
+      {ROLE}{MONTH YEAR -- Present}
+\begin{itemize}
+    \item VERB SCOPE, coordinating STAKEHOLDERS to deliver OUTCOME.
+\end{itemize}
+
+\section*{Projects}
+% Optional. Cut this section first when the page overflows.
+
+\entry{PROJECT NAME}{\href{https://EXAMPLE.COM}{Live Demo}}
+      {Independent Project}{YEAR}
+\begin{itemize}
+    \item VERB WHAT YOU BUILT, handling TECHNICAL CHALLENGE, serving SCALE.
+\end{itemize}
+
+\section*{Skills}
+% Put the category the posting cares about first; rename labels to mirror its wording.
+\noindent\textbf{CATEGORY:} SKILL, SKILL, SKILL, SKILL \\[2pt]
+\noindent\textbf{CATEGORY:} SKILL, SKILL, SKILL \quad | \quad \textbf{Languages:} LANGUAGE (Native), LANGUAGE (Professional)
+
+\end{document}
